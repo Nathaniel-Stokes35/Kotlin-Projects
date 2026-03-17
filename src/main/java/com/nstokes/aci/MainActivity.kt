@@ -43,7 +43,7 @@ fun ACIChatScreen(modifier: Modifier = Modifier) {
     Column(modifier.fillMaxSize()) {
         LazyColumn(
             modifier = Modifier.weight(1f),
-            reverseLayout = true
+            reverseLayout = true // Most recent at the bottom
         ) {
             if (messages.isEmpty()) {
                 item {
@@ -51,12 +51,7 @@ fun ACIChatScreen(modifier: Modifier = Modifier) {
                         text = "Welcome to the ACI Chat Screen! There is currently a maximum Chat View Size of 100 messages and the ACI's have not been fully implemented so this is an Echo Note's Taking App Currently! Thank you for reviewing my code!",
                         isUser = false,
                         modifier = Modifier.padding(8.dp)
-                    )
-                    ChatBubble(
-                        text = "New Change to Sync to Git",
-                        isUser = false,
-                        modifier = Modifier.padding(8.dp)
-                    )
+                    ) // Welcome Message
                 }
             }
             items(messages.reversed()) { msg ->
